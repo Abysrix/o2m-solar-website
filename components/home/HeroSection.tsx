@@ -35,8 +35,10 @@ export function HeroSection() {
               src={src}
               alt={HERO_ALTS[i]}
               fill
-              priority={true}
+              priority={i === 0}
+              loading={i === 0 ? "eager" : "lazy"}
               sizes="100vw"
+              quality={i === 0 ? 85 : 75}
               className="object-cover"
             />
           </div>

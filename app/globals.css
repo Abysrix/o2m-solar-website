@@ -231,6 +231,7 @@ body {
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
   overflow: hidden;
+  will-change: opacity;
 }
 
 .hero-slide--active {
@@ -241,6 +242,7 @@ body {
 .hero-slide img {
   transform: scale(1.08);
   transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
 }
 
 .hero-slide--active img {
@@ -1755,6 +1757,36 @@ body {
   font-size: 0.72rem;
   color: #64748b;
   margin-top: 0.1rem;
+}
+
+/* ——— Performance ——— */
+
+/* Respect users who prefer reduced motion (also helps Lighthouse TBT score) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-slide img {
+    transform: scale(1) !important;
+    transition: none !important;
+  }
+}
+
+/* content-visibility: auto defers rendering of off-screen sections */
+.section--services,
+.section--unique,
+.section--subsidy,
+.section--reviews,
+.section--testimonials,
+.section--contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 600px;
 }
 
 

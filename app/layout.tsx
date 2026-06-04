@@ -10,6 +10,8 @@ import { siteMetadata } from "@/lib/seo";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = siteMetadata;
@@ -22,6 +24,11 @@ export default function RootLayout({
   return (
     <html lang="en-IN" className={`${geistSans.variable} scroll-smooth`}>
       <head>
+        {/* Resource hints — start connections early */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://vtustsrotwhirshhgaxj.supabase.co" />
+        <link rel="dns-prefetch" href="https://vtustsrotwhirshhgaxj.supabase.co" />
         <noscript>
           <style dangerouslySetInnerHTML={{ __html: `
             .scroll-reveal {
