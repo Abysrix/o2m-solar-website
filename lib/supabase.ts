@@ -1,5 +1,5 @@
 /**
- * Supabase integration layer.
+ * Supabase integration layer — SERVER ONLY.
  *
  * Client (browser) uses NEXT_PUBLIC_SUPABASE_URL + NEXT_PUBLIC_SUPABASE_ANON_KEY.
  * Server API routes use SUPABASE_SERVICE_ROLE_KEY (never exposed to browser).
@@ -10,6 +10,7 @@
  *   3. Copy .env.local.example → .env.local and fill in your keys
  */
 
+import "server-only";
 import { createClient } from "@supabase/supabase-js";
 import type { Review } from "./reviews";
 

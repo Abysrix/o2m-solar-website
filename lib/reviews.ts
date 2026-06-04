@@ -101,6 +101,3 @@ export async function submitReview(
     return { ok: false, error: "Network error. Please try again." };
   }
 }
-
-// Re-export so existing imports don't break
-export { isSupabaseConfigured } from "./supabase";
