@@ -10,22 +10,19 @@ import { Testimonials } from "./Testimonials";
 import { ContactCTA } from "./ContactCTA";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 
-// Code-split heavy interactive sections — they load after the above-fold content
-const SolarCalculatorSection = dynamic(
-  () => import("./SolarCalculatorSection").then((m) => m.SolarCalculatorSection),
-  { ssr: false }
+// Code-split heavy interactive sections into separate JS chunks
+// SSR still runs (good for SEO), but the JS is loaded lazily on the client
+const SolarCalculatorSection = dynamic(() =>
+  import("./SolarCalculatorSection").then((m) => m.SolarCalculatorSection)
 );
-const FAQSection = dynamic(
-  () => import("./FAQSection").then((m) => m.FAQSection),
-  { ssr: false }
+const FAQSection = dynamic(() =>
+  import("./FAQSection").then((m) => m.FAQSection)
 );
-const ReviewsSection = dynamic(
-  () => import("./ReviewsSection").then((m) => m.ReviewsSection),
-  { ssr: false }
+const ReviewsSection = dynamic(() =>
+  import("./ReviewsSection").then((m) => m.ReviewsSection)
 );
-const ContactSection = dynamic(
-  () => import("./ContactSection").then((m) => m.ContactSection),
-  { ssr: false }
+const ContactSection = dynamic(() =>
+  import("./ContactSection").then((m) => m.ContactSection)
 );
 
 export function SolarHome() {
