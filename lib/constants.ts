@@ -301,13 +301,13 @@ export const TESTIMONIALS = [
     quote:
       "Clear engineering documentation and a smooth installation timeline. Our factory roof system was commissioned on schedule.",
     author: "Operations Manager",
-    company: "Industrial Client (Placeholder)",
+    company: "Manufacturing Unit, Lucknow",
   },
   {
     quote:
       "The team explained net metering and system sizing in plain language. Professional from survey to handover.",
     author: "Homeowner",
-    company: "Residential Client (Placeholder)",
+    company: "Residential Client, Gomti Nagar",
   },
 ];
 
